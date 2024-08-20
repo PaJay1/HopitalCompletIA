@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="admin.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+</head>
+<body>
+    <div class="header_section">
+        <nav class="destop_header navbar navbar-expand-lg navbar-light bg-light">
+          <div class="logo"></div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ol class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="logo_main" href="index.html"><img src="images/medieyelogo.png" style="width: 150px; height: auto;"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="TAdmin.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="departement.html">Ajouter Departements</a>
+              </li>
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link" href="#"><img src="images/search-icon.png"></a>
+              </li> 
+              <li class="nav-item">
+                <button id="logoutButton" class="btn btn-danger">Déconnexion</button>
+            </li> 
+            <h2>Bienvenue, Admin <span id="adminName"></span> </h2>
+        
+                          
+            </ol>
+          </div>
+        </nav>
+      </div>
+      
+      <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Nombre de Patients</h5>
+                    <p id="patientsCount" class="display-4">0</p>
+                    <button class="btn btn-primary" onclick="showPatientsSection()">Voir les Patients</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Nombre de Docteurs</h5>
+                    <p id="doctorsCount" class="display-4">0</p>
+                    <button class="btn btn-primary" onclick="showDoctorsSection()">Voir les Docteurs</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        
+        
+        <section>
+        <!-- Section pour afficher les patients -->
+            <div id="patientsSection">
+                <h3>Liste des Patients</h3>
+                <ul id="patientsList"></ul>
+                <button class="btn btn-primary" onclick="showPatientForm()">Ajouter un Patient</button>
+                <button class="btn btn-primary" onclick="masquer()">Masquer</button>
+                <form id="patientForm" style="display:none;" onsubmit="createPatient(event)">
+                    <input type="text" id="patientNom" placeholder="Nom" required>
+                    <input type="text" id="patientPrenom" placeholder="Prénom" required>
+                    <input type="email" id="patientEmail" placeholder="Email" required>
+                    <input type="password" id="patientMdp" placeholder="Mdp" required>
+                    <input type="text" id="patientNum" placeholder="Numéro de Téléphone" required>
+                    <input type="text" id="patientNas" placeholder="NAS" required>
+                    <input type="text" id="patientSexe" placeholder="Sexe (Male/Female)" required>
+                    <button class="btn btn-primary" type="submit">Créer Patient</button>
+                </form>
+            </div>
+        </section>
+        <div class="scrolling-text">
+          <marquee>Bonjour, bienvenu sur votre interface administrateur. Vous pouvez Afficher les utilisateurs en cliquant sur les boutons au dessus </marquee>
+        </div>
+        <!-- Section pour afficher les docteurs -->
+        <div id="doctorsSection">
+            <h3>Liste des Docteurs</h3>
+            <ul id="doctorsList"></ul>
+            <button class="btn btn-primary" onclick="showDoctorForm()">Ajouter un Docteur</button>
+            <button class="btn btn-primary" onclick="masquer()">Masquer</button>
+            <form id="doctorForm" style="display:none;" onsubmit="createDoctor(event)">
+                <input type="text" id="doctorNom" placeholder="Nom" required>
+                <input type="text" id="doctorPrenom" placeholder="Prénom" required>
+                <input type="email" id="doctorEmail" placeholder="Email" required>
+                <input type="text" id="doctorSpecialisation" placeholder="Spécialisation" required>
+                <input type="password" id="doctorMdp" placeholder="Mdp" required>
+                <input type="text" id="doctorNum" placeholder="Numéro de Téléphone" required>
+                <input type="text" id="doctorNas" placeholder="NAS" required>
+                <input type="text" id="doctorSexe" placeholder="Sexe (Male/Female)" required>
+                <label for="departmentSelect">Département:</label>
+                <select id="departmentSelect" required></select>
+                
+                <button class="btn btn-primary" type="submit">Créer Docteur</button>
+            </form>
+        </div>
+        
+    </div>
+    <script src="admin.js"></script>
+    
+</body>
+</html>

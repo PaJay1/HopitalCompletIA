@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+    <link rel="stylesheet" href="path/to/bootstrap.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="TAdmin.html">Dashboard Admin</a></li>
+            <li><a href="doctor.html">Doctors</a></li>
+            <li><a href="patients.html">Patients</a></li>
+        </ul>
+    </nav>
+
+    <h1>Bienvenue, <span id="adminName"></span></h1>
+    <button id="logoutButton">Déconnexion</button>
+
+    <h2>Liste des Patients</h2>
+    <ul id="patientsList"></ul>
+
+    <!-- Section pour créer un patient -->
+    <div>
+        <button onclick="showPatientForm()">Ajouter Patient</button>
+        <form id="patientForm" onsubmit="createPatient(event)" style="display: none;">
+            <input type="text" id="patientNom" placeholder="Nom" required>
+            <input type="text" id="patientPrenom" placeholder="Prénom" required>
+            <input type="email" id="patientEmail" placeholder="Email" required>
+            <input type="password" id="patientMdp" placeholder="Mot de passe" required>
+            <input type="text" id="patientNum" placeholder="Téléphone" required>
+            <input type="text" id="patientNas" placeholder="NAS" required>
+            <select id="patientSexe" required>
+                <option value="M">Masculin</option>
+                <option value="F">Féminin</option>
+            </select>
+            <button type="submit">Ajouter Patient</button>
+        </form>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

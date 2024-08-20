@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Patient</title>
+    <link rel="stylesheet" href="patient.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+   
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- owl stylesheets --> 
+    <link rel="stylesheet" href="patient.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+</head>
+<body>
+
+    <div class="header_section">
+        <nav class="destop_header navbar navbar-expand-lg navbar-light bg-light">
+          <div class="logo"></div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ol class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="logo_main" href="index.html"><img src="images/medieyelogo.png" style="width: 150px; height: auto;"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="TPatient.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="TPatient.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="TPatient.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="TPatient.html">Home</a>
+              </li><li class="nav-item">
+                <a class="nav-link" href="http://localhost:8501">Chat</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><img src="images/search-icon.png"></a>
+              </li> 
+              <li class="nav-item">
+                <button id="logoutButton" class="btn btn-danger">Déconnexion</button>
+              </li> 
+              <h2>Bienvenue, <span id="patientName"></span> </h2>
+            </ol>
+          </div>
+        </nav>
+    </div>
+    <div class="container">
+
+        <!-- Section pour afficher le profil de l'utilisateur -->
+        <div id="userProfileSection">
+            <div class="card">
+                <div class="card-header">Mon Profil</div>
+                <div class="card-body">
+                    <p><strong>Nom :</strong> <span id="userName"></span></p>
+                    <p><strong>Email :</strong> <span id="userEmail"></span></p>
+                    <p><strong>Numéro :</strong> <span id="userNum"></span></p>
+                    <p><strong>Sexe :</strong> <span id="userSexe"></span></p>
+                    <button id="editProfileButton" class="btn btn-primary">Modifier Profil</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section pour modifier le profil de l'utilisateur -->
+        <div id="editProfileSection" style="display: none;">
+            <div class="card">
+                <div class="card-header">Modifier Mon Profil</div>
+                <div class="card-body">
+                    <form id="editProfileForm">
+                        <div class="form-group">
+                            <label for="editNom">Nom :</label>
+                            <input type="text" id="editNom" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editPrenom">Prénom :</label>
+                            <input type="text" id="editPrenom" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editEmail">Email :</label>
+                            <input type="email" id="editEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editNum">Numéro :</label>
+                            <input type="text" id="editNum" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editSexe">Sexe :</label>
+                            <select id="editSexe" class="form-control" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editMdp">Nouveau mot de passe :</label>
+                            <input type="password" id="editMdp" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmMdp">Confirmer mot de passe :</label>
+                            <input type="password" id="confirmMdp" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sauvegarder les modifications</button>
+                        <button type="button" class="btn btn-secondary" id="cancelEdit">Annuler</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section pour afficher les rendez-vous -->
+        <div id="appointmentsSection">
+            <div class="card">
+                <div class="card-header">Mes Rendez-vous</div>
+                <div class="card-body">
+                    <ul id="appointmentsList"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section pour créer un nouveau rendez-vous -->
+        <div id="createAppointmentSection">
+            <div class="card">
+                <div class="card-header">Créer un Rendez-vous</div>
+                <div class="card-body">
+                    <form id="createAppointmentForm">
+                        <div class="form-group">
+                            <label for="doctorId">Choisissez un Médecin:</label>
+                            <select id="doctorId" class="form-control" required></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentDate">Date du Rendez-vous:</label>
+                            <input type="date" id="appointmentDate" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Créer Rendez-vous</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section pour afficher le dossier médical -->
+        <div id="medicalRecordSection">
+            <div class="card">
+                <div class="card-header">Mon Dossier Médical</div>
+                <div class="card-body">
+                    <div id="medicalRecord"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="patient.js"></script>
+</body>
+</html>

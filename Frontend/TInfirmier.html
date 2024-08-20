@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Patient</title>
+    <link rel="stylesheet" href="patient.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+   
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- owl stylesheets --> 
+    <link rel="stylesheet" href="patient.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+</head>
+<body>
+
+    <div class="header_section">
+        <nav class="destop_header navbar navbar-expand-lg navbar-light bg-light">
+          <div class="logo"></div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ol class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="logo_main" href="index.html"><img src="images/medieyelogo.png" style="width: 150px; height: auto;"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="TPatient.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="TPatient.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="TPatient.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="TPatient.html">Home</a>
+              </li><li class="nav-item">
+                <a class="nav-link" href="http://localhost:8501">Chat</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><img src="images/search-icon.png"></a>
+              </li> 
+              <li class="nav-item">
+                <button id="logoutButton" class="btn btn-danger">Déconnexion</button>
+              </li> 
+              
+            </ol>
+          </div>
+        </nav>
+    </div>
+    <div class="container">
+
+        <!-- Section pour afficher le profil de l'utilisateur -->
+        <div id="userProfileSection">
+            <div class="card">
+                <div class="card-header">Mon Profil</div>
+                <div class="card-body">
+                    <p><strong>Nom :</strong> <span id="userName"></span></p>
+                    <p><strong>Email :</strong> <span id="userEmail"></span></p>
+                    <p><strong>Numéro :</strong> <span id="userNum"></span></p>
+                    <p><strong>Sexe :</strong> <span id="userSexe"></span></p>
+                    <button id="editProfileButton" class="btn btn-primary">Modifier Profil</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section pour modifier le profil de l'utilisateur -->
+        <div id="editProfileSection" style="display: none;">
+            <div class="card">
+                <div class="card-header">Modifier Mon Profil</div>
+                <div class="card-body">
+                    <form id="editProfileForm">
+                        <div class="form-group">
+                            <label for="editNom">Nom :</label>
+                            <input type="text" id="editNom" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editPrenom">Prénom :</label>
+                            <input type="text" id="editPrenom" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editEmail">Email :</label>
+                            <input type="email" id="editEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editNum">Numéro :</label>
+                            <input type="text" id="editNum" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editSexe">Sexe :</label>
+                            <select id="editSexe" class="form-control" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editMdp">Nouveau mot de passe :</label>
+                            <input type="password" id="editMdp" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmMdp">Confirmer mot de passe :</label>
+                            <input type="password" id="confirmMdp" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sauvegarder les modifications</button>
+                        <button type="button" class="btn btn-secondary" id="cancelEdit">Annuler</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="container">
+          <!-- Section pour afficher les lits -->
+          <div id="litsSection">
+              <h2>Liste des Lits</h2>
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Numéro du Lit</th>
+                          <th>Status</th>
+                      </tr>
+                  </thead>
+                  <tbody id="litsTableBody">
+                      <!-- Les lits seront affichés ici -->
+                  </tbody>
+              </table>
+          </div>
+      </div>
+
+
+      <div id="editLitSection" style="display: none;">
+        <h3>Modifier le statut du lit</h3>
+        <form id="editLitForm">
+            <input type="hidden" id="editLitId">
+            <div class="form-group">
+                <label for="editLitNum">Numéro du lit :</label>
+                <input type="text" id="editLitNum" class="form-control" readonly>
+            </div>
+            <div class="form-group">
+                <label for="editLitStatus">Statut :</label>
+                <select id="editLitStatus" class="form-control">
+                    <option value="disponible">Disponible</option>
+                    <option value="occupe">Occupé</option>
+                </select>
+            </div>
+            <div class="form-group" id="patientSelection" style="display: none;">
+                <label for="selectPatient">Attribuer à un patient :</label>
+                <select id="selectPatient" class="form-control">
+                    <!-- Liste des patients à remplir dynamiquement -->
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Sauvegarder</button>
+            <button type="button" class="btn btn-secondary" id="cancelEditLit">Annuler</button>
+        </form>
+    </div>
+    
+      
+      
+        
+        
+    </div>
+
+    <script src="Infirmier.js"></script>
+</body>
+</html>

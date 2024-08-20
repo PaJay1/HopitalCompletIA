@@ -1,0 +1,178 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('th.jpeg'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* L'image couvrira toute la page */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-position: center; /* Centrer l'image */
+    color: #f4f4f4; /* Couleur de texte claire */
+    margin: 0;
+    padding: 0;
+}
+
+.header_section {
+    background-color: #295e21;
+    padding: 15px 0;
+}
+
+.navbar-brand img {
+    width: 150px;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f4f4f4; /* Couleur de survol */
+    background-color: #3a7d32; /* Légère couleur de fond au survol */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.card {
+    background-color: #2c2c2e; /* Fond sombre pour les cartes */
+    border: 1px solid #444; /* Bordure plus foncée */
+    border-radius: 8px;
+    color: #f4f4f4; /* Texte clair */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre */
+    transition: transform 0.3s ease-in-out; /* Transition pour l'effet de survol */
+    padding: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Légère montée au survol */
+}
+
+.card-title {
+    font-weight: bold;
+    color: #f4f4f4;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #004080;
+    border-color: #004080;
+    color: #f4f4f4; /* Texte clair sur le bouton */
+    transition: background-color 0.3s ease-in-out; /* Ajout d'une transition pour le survol */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background-color: #003366; /* Changement de couleur au survol */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Couleur rouge Bootstrap */
+    border-color: #dc3545;
+    color: #f4f4f4; /* Texte clair */
+    transition: background-color 0.3s ease-in-out;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn-danger:hover {
+    background-color: #b52b39; /* Couleur de survol pour le bouton danger */
+}
+
+form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #2c2c2e; /* Fond sombre pour les formulaires */
+    border: 1px solid #444; /* Bordure sombre */
+    border-radius: 8px;
+    color: #f4f4f4; /* Texte clair */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour le formulaire */
+}
+
+form .form-group {
+    margin-bottom: 15px;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #3c3c3e; /* Fond sombre pour les champs de formulaire */
+    border: 1px solid #555; /* Bordure sombre */
+    border-radius: 5px;
+    color: #f4f4f4; /* Texte clair */
+}
+
+form input::placeholder {
+    color: #ccc; /* Couleur des placeholders */
+}
+
+form .btn {
+    background-color: #004080;
+    border-color: #004080;
+    color: #f4f4f4; /* Texte clair sur les boutons */
+    transition: background-color 0.3s ease-in-out;
+}
+
+form .btn:hover {
+    background-color: #003366; /* Couleur au survol */
+}
+
+#patientsSection,
+#doctorsSection {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #444; /* Fond sombre pour les sections */
+    border: 1px solid #666; /* Bordure plus claire */
+    border-radius: 8px;
+    color: #f4f4f4; /* Texte clair */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre */
+    display: none; /* Masquer les sections par défaut */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #555; /* Fond légèrement plus clair pour les éléments de liste */
+    border: 1px solid #666; /* Bordure plus claire */
+    border-radius: 8px;
+    color: #f4f4f4; /* Texte clair */
+}
+
+#logoutButton {
+    background-color: #dc3545; /* Couleur rouge Bootstrap pour les boutons d'alerte */
+    color: white; /* Texte blanc */
+    border: none; /* Supprimer les bordures par défaut du bouton */
+    padding: 10px 20px; /* Espacement intérieur */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 16px; /* Taille de la police */
+    cursor: pointer; /* Curseur pointer pour le bouton */
+    margin: 20px 0; /* Espacement */
+    transition: background-color 0.3s ease-in-out; /* Ajout d'une transition pour le survol */
+}
+
+#logoutButton:hover {
+    background-color: #b52b39; /* Couleur de survol pour le bouton */
+}
+
+.scrolling-text {
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond légèrement transparent */
+    color: #f4f4f4; /* Texte clair */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+

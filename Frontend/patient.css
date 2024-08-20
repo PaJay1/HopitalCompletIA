@@ -1,0 +1,172 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('th.jpeg'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* L'image couvrira toute la page */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-position: center; /* Centrer l'image */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #303036;
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #dc3545;; /* Couleur verte */
+    color: #fff;
+    border: none;
+    padding: 1px 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: right; /* Aligne les boutons à droite */
+    margin-left: 500px; /* Optionnel : espacement au-dessus des boutons */
+}
+
+button:hover {
+    background-color: #ea6969; /* Couleur verte plus foncée pour l'effet hover */
+}
+
+h2, h3 {
+    color: #28a745; /* Couleur verte pour les titres */
+}
+
+.card {
+    background-color: #f7f7f7;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #28a745; /* Couleur verte pour l'en-tête de la carte */
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+#appointmentsSection, #createAppointmentSection, #medicalRecordSection {
+    margin-bottom: 20px;
+}
+
+#appointmentsSection .card, 
+#createAppointmentSection .card, 
+#medicalRecordSection .card,
+#userProfileSection .card {
+    background-color: #f7f7f7;
+}
+
+#medicalRecordSection li {
+    
+    background-color: #474646;
+    color: white; /* Texte blanc */
+    padding: 10px;
+}
+
+#appointmentsList {
+    list-style: none;
+    padding: 0;
+    
+}
+
+#appointmentsList li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #474646;
+    color: white; /* Texte blanc */
+    border-radius: 8px;
+}
+
+#appointmentsList li:last-child {
+    border-bottom: none;
+    background-color: #474646;
+    color: white; /* Texte blanc */
+    border-radius: 8px;
+}
+
+#userProfileSection p {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #474646;
+    color: white; /* Texte blanc */
+    border-radius: 8px;
+}
+
+#userProfileSection .card {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #474646;
+    color: white; /* Texte blanc */
+    border-radius: 8px;
+}
+
+#logoutButton {
+    background-color: #dc3545; /* Couleur rouge Bootstrap pour les boutons d'alerte */
+    color: white; /* Texte blanc */
+    border: none; /* Supprimer les bordures par défaut du bouton */
+    padding: 10px 15px; /* Espacement intérieur */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 16px; /* Taille de la police */
+    cursor: pointer; /* Curseur pointer pour le bouton */
+    margin: 55px 85px; /* Espacement */
+}
+
+#logoutButton:hover {
+    background-color: #db989e; /* Couleur de survol pour le bouton */
+}
+
+/* Style des formulaires */
+form {
+    background-color: #474646;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #d6d3d3;
+}
+
+select, input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+select:focus, input[type="date"]:focus {
+    border-color: #28a745; /* Bordure verte pour les éléments en focus */
+}
+
+#doctorProfileSection p{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #474646;
+    color: white; /* Texte blanc */
+    border-radius: 8px;
+}
